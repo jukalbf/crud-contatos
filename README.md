@@ -2,7 +2,7 @@
 Atividade de CRUD mongoDB
 
 ## Como rodar a aplicação
-<ul style="list-style: numeric;">
+<ul style="list-style-type: decimal;">
     <li>Acesse a pasta do repositorio no terminal(cd diretorio-salvo/crud-mongodb)</li>
     <li>Digite npm start</li>
     <li>Após a confirmação que o servidor iniciou, abra outro terminal na pasta frontend(cd diretorio-salvo/crud-mongodb/frontend)</li>
