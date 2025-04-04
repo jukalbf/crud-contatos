@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const Contato = require("./ContatoModel");
 const ContatoController = require("./ContatoController");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ mongoose.connect(process.env.MONGO_URI);
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", ContatoController.getContatos);
 
