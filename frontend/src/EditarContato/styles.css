@@ -1,0 +1,45 @@
+.container-form-edit {
+  flex-direction: column;
+  /* margin: 10px 0; */
+  padding: 15px;
+  border-radius: 5px;
+  height: fit-content;
+
+  h3 {
+    color: rgb(255, 255, 255);
+    margin: 5px 0;
+  }
+
+  .input-edit {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    font-family: "Montserrat";
+  }
+
+  span {
+    color: rgb(245, 255, 249);
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    button {
+      font-family: "Montserrat";
+      border: none;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .btn-editar {
+      background-color: rgb(47, 161, 206);
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  }
+}

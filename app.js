@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", ContatoController.getContatos);
+app.get("/:id", ContatoController.getOneContato);
 
 app.post("/", ContatoController.postContato);
 

@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { CiTrash } from "react-icons/ci";
 import { CiEdit } from "react-icons/ci";
+import EditarContato from "./EditarContato";
 
 function App() {
   const [dataContatos, setDataContatos] = useState([]);
   const [nome, setNome] = useState("");
   const [numero, setNumero] = useState(0);
+  const [editOpen, setEditOpen] = useState(false);
   const url = "http://localhost:8000/";
 
   useEffect(() => {
@@ -75,7 +77,7 @@ function App() {
       <li key={contato._id} id={contato._id} className="contato">
         <div className="contato-infos">
           <div className="icons">
-            <CiEdit className="edit" />
+            <CiEdit className="edit" onClick={() => setEditOpen(true)} />
             <CiTrash
               className="lixeira"
               onClick={() => deleteContato(contato._id)}
@@ -84,6 +86,12 @@ function App() {
           <h4>{contato.nome}</h4>
           <span>{contato.numero}</span>
         </div>
+        <EditarContato
+          display={editOpen ? "flex" : "none"}
+          close={setEditOpen}
+          contatoData={contato}
+          setDataContatos={setDataContatos}
+        />
         <hr />
       </li>
     );

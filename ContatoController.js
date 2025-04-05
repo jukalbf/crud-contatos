@@ -11,6 +11,18 @@ async function getContatos(req, res) {
   }
 }
 
+async function getOneContato(req, res) {
+  try {
+    const { id } = req.params;
+
+    const findContato = await Contato.findById(id);
+
+    res.status(200).json({ message: "Usuário encontrado com sucesso.", contato: findContato });
+  } catch (err) {
+    return res.status(500).json({ error: err })
+  }
+}
+
 async function postContato(req, res) {
   const { nome, numero } = req.body;
 
@@ -77,4 +89,5 @@ module.exports = {
     postContato,
     deleteContato,
     putContato,
+    getOneContato,
 }
